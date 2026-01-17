@@ -1,0 +1,262 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: lightgray;
+}
+/* Top header container */
+.insidebox {
+  display: flex;
+  justify-content: space-between; /* left vs right */
+  align-items: center;            /* vertical alignment */
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;  /* optional line under header */
+  background: #fff;               /* optional background */
+}
+
+/* Left: logo + institute name */
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: orange;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.insname h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #222;
+}
+.insname p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Right: placement + register in one row */
+.registerbox {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between placement and button */
+}
+
+.placement {
+  background: orange;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.register {
+  background: orange;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+
+.slidecontainer {
+  flex: 2;                     
+  position: relative;
+  max-width: 800px;
+  height: 360px;               
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+
+.slide {
+  position: absolute;
+  inset: 0;                    
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(20px) scale(.98);
+  animation: cardCycle 6s infinite;
+  will-change: opacity, transform;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+.slide1 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 20px;
+}
+.mernimg img {
+  max-width: 200px;
+  height: auto;
+}
+
+
+.coursedetails {
+  flex: 2;
+  padding: 20px;
+}
+.coursetitle {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #333;
+}
+.aboutcourse ul {
+  margin: 0;
+  padding-left: 18px;
+  margin-bottom: 15px;
+  color: #444;
+}
+.aboutcourse li {
+  margin-bottom: 6px;
+}
+
+
+.bubbles {
+  display: flex;
+  gap: 12px;
+}
+.bubble1, .bubble2 {
+  background: #ff7675;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 4s; }
+.slide:nth-child(3) { animation-delay: 8s; }
+.slide:nth-child(4) { animation-delay: 12s; }
+
+@keyframes cardCycle {
+  0%   { opacity: 0; transform: translateY(20px) scale(.98); }
+  6%   { opacity: 1; transform: translateY(0)  scale(1); }
+  25%  { opacity: 1; transform: translateY(0)  scale(1); }
+  31%  { opacity: 0; transform: translateY(-20px) scale(.98); }
+  100% { opacity: 0; transform: translateY(-20px) scale(.98); }
+}
+
+
+.slide:nth-child(1) { background: linear-gradient(135deg,#e6fff0,#c8f7d9); }
+.slide:nth-child(2) { background: linear-gradient(135deg,#e9f2ff,#cfe6ff); }
+.slide:nth-child(3) { background: linear-gradient(135deg,#fff0fb,#f5dff7); }
+.slide:nth-child(4) { background: linear-gradient(135deg,#fff9e6,#ffebc9); }
+
+.slidecontainer:hover .slide { animation-play-state: paused; }
+
+
+.rightbox {
+  flex: 1;
+  max-width: 350px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  height: fit-content;
+}
+.infobox h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #222;
+}
+.infobox p {
+  font-size: 14px;
+  color: #444;
+}
+
+
+.guarantee {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+  background: #fff7f0;
+  padding: 12px;
+  border-radius: 10px;
+}
+
+
+
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #f5f5f5;
+  color: #333;
+  border-top: 1px solid #ddd;
+}
+
+@media screen and (max-width:700px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .slidecontainer {
+    width: 100%;
+    margin-right: 0;
+  }
+  .rightbox {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .register {
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width:500px) {
+  .insidebox {
+    flex-direction: column;
+    text-align: center;
+  }
+  .title h1 {
+    font-size: 18px;
+  }
+  .main-content {
+    padding: 10px;
+  }
+  .coursedetails ul {
+    padding-left: 20px;
+  }
+  .register {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+

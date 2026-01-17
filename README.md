@@ -7,7 +7,7 @@ This is a practice project for beginners to learn HTML and CSS by creating a pos
 
 * Single-page poster design using HTML and CSS
 * Creative layout and styling for educational or promotional posters
-* Responsive design for different screen sizes
+
 * Beginner-friendly: Learn basic HTML tags, CSS styling, and layout techniques
 
 ## 🖥️ How to Use
@@ -19,7 +19,7 @@ This is a practice project for beginners to learn HTML and CSS by creating a pos
 
 2. Open the folder:
 ```bash
-   cd poster-design-project
+   cd "app name"
 ```
 
 3. Open the poster in a web browser:  
